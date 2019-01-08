@@ -1,27 +1,14 @@
 import * as React from 'react';
 import { observer, inject } from 'mobx-react';
-import { FormControl, TextField, Fab } from '@material-ui/core';
+import { TextField, Fab } from '@material-ui/core';
 import AddIcon from '@material-ui/icons/Add';
-import styled from 'styled-components';
 
 import AlbumModel from '../models/AlbumModel';
-
-const StyledDiv = styled.div`
-  && {
-    display: flex;
-    align-content: stretch;
-    align-items: center;
-
-    /* childs margin */
-    & > * {
-      margin: 12px;
-    }
-  }
-`;
+import AlbumForm from '../blocks/AlbumForm';
 
 @inject('albumStore')
 @observer
-class TodoForm extends React.Component {
+class AlbumCreator extends React.Component {
   constructor(props) {
     super(props);
 
@@ -44,9 +31,9 @@ class TodoForm extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.handleFormSubmit}>
-        <StyledDiv>
-          <FormControl>
+      <AlbumForm onSubmit={this.handleFormSubmit}>
+        <AlbumForm.Content>
+          <AlbumForm.Control>
             <TextField
               label="Artist"
               name="artist"
@@ -54,8 +41,8 @@ class TodoForm extends React.Component {
               onChange={this.handleInputChange}
               margin="normal"
             />
-          </FormControl>
-          <FormControl>
+          </AlbumForm.Control>
+          <AlbumForm.Control>
             <TextField
               label="Album"
               name="name"
@@ -63,14 +50,14 @@ class TodoForm extends React.Component {
               onChange={this.handleInputChange}
               margin="normal"
             />
-          </FormControl>
+          </AlbumForm.Control>
           <Fab color="primary" size="small" aria-label="Add" type="submit">
             <AddIcon />
           </Fab>
-        </StyledDiv>
-      </form>
+        </AlbumForm.Content>
+      </AlbumForm>
     );
   }
 }
 
-export default TodoForm;
+export default AlbumCreator;

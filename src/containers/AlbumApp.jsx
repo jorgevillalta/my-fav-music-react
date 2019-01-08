@@ -3,11 +3,10 @@ import { Provider } from 'mobx-react';
 import styled from 'styled-components';
 
 import AlbumStore from '../stores/AlbumStore';
-import AlbumModel from '../models/AlbumModel';
 import AlbumBar from '../components/AlbumBar';
-import AlbumForm from '../components/AlbumForm';
+import AlbumCreator from '../components/AlbumCreator';
 import AlbumOrder from '../components/AlbumOrder';
-import AlbumList from '../components/AlbumList';
+import AlbumGroup from '../components/AlbumGroup';
 
 const StyledContentDiv = styled.div`
   && {
@@ -16,9 +15,9 @@ const StyledContentDiv = styled.div`
 `;
 
 const albumStore = new AlbumStore();
-albumStore.add(new AlbumModel('Radiohead', 'Ok Computer'));
+/*albumStore.add(new AlbumModel('Radiohead', 'Ok Computer'));
 albumStore.add(new AlbumModel('Muse', 'Absolution'));
-albumStore.add(new AlbumModel('Pink Floyd', 'The dark side of the Moon'));
+albumStore.add(new AlbumModel('Pink Floyd', 'The dark side of the Moon'));*/
 
 const stores = { albumStore: albumStore };
 
@@ -29,9 +28,9 @@ class AlbumApp extends React.Component {
         <div>
           <AlbumBar />
           <StyledContentDiv>
-            <AlbumForm />
+            <AlbumCreator />
             <AlbumOrder />
-            <AlbumList />
+            <AlbumGroup />
           </StyledContentDiv>
         </div>
       </Provider>
