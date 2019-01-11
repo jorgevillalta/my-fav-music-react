@@ -6,8 +6,6 @@ import AddIcon from '@material-ui/icons/Add';
 import AlbumModel from '../models/AlbumModel';
 import AlbumForm from '../blocks/AlbumForm';
 
-@inject('albumStore')
-@observer
 class AlbumCreator extends React.Component {
   constructor(props) {
     super(props);
@@ -60,4 +58,4 @@ class AlbumCreator extends React.Component {
   }
 }
 
-export default AlbumCreator;
+export default inject('albumStore')(observer(AlbumCreator));
