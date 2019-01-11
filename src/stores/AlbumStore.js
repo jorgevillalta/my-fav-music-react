@@ -1,14 +1,13 @@
-import { observable, computed, action } from 'mobx';
+import { decorate, observable, computed, action } from 'mobx';
 
 import AlbumOrderModel from '../models/AlbumOrderModel';
 
 class AlbumStore {
-  @observable albums = [];
-  @observable sortOrder = AlbumOrderModel.byDate;
+  albums = [];
+  sortOrder = AlbumOrderModel.byDate;
 
-  @computed
   get sortedAlbums() {
-    return this.albums.sort((a, b) => {
+    return this.albums.slice().sort((a, b) => {
       const field = this.sortOrder;
 
       if (field === AlbumOrderModel.byDate) {
@@ -19,12 +18,10 @@ class AlbumStore {
     });
   }
 
-  @action
   add(album) {
     this.albums.push(album);
   }
 
-  @action
   editAlbum(item) {
     this.albums.map(album => {
       if (album.id === item.id) {
@@ -35,10 +32,18 @@ class AlbumStore {
     });
   }
 
-  @action
   deleteAlbum(item) {
     this.albums = this.albums.filter(album => album.id === item.id);
   }
 }
+
+decorate(AlbumStore, {
+  albums: observable,
+  sortOrder: observable,
+  sortedAlbums: computed,
+  add: action,
+  editAlbum: action,
+  deleteAlbum: action
+});
 
 export default AlbumStore;

@@ -6,7 +6,6 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import AlbumCard from '../blocks/AlbumCard';
 import uknownAlbumImage from '../images/unknown-album.jpg';
 
-@observer
 class AlbumView extends React.Component {
   handleButton = event => {
     event.preventDefault();
@@ -36,4 +35,4 @@ class AlbumView extends React.Component {
   }
 }
 
-export default AlbumView;
+export default observer(AlbumView);

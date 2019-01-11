@@ -1,12 +1,9 @@
-import * as React from "react";
-import { inject, observer } from "mobx-react";
-import styled from "styled-components";
+import * as React from 'react';
+import { inject, observer } from 'mobx-react';
 
-import AlbumView from "../components/AlbumView";
-import AlbumList from "../blocks/AlbumList";
+import AlbumView from '../components/AlbumView';
+import AlbumList from '../blocks/AlbumList';
 
-@inject("albumStore")
-@observer
 class AlbumGroup extends React.Component {
   render() {
     return (
@@ -19,4 +16,4 @@ class AlbumGroup extends React.Component {
   }
 }
 
-export default AlbumGroup;
+export default inject('albumStore')(observer(AlbumGroup));

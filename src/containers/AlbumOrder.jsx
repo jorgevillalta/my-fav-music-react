@@ -18,9 +18,7 @@ const StyledDiv = styled.div`
   }
 `;
 
-@inject('albumStore')
-@observer
-class TodoOrder extends React.Component {
+class AlbumOrder extends React.Component {
   handleSelect = e => {
     this.props.albumStore.sortOrder = e.target.value;
   };
@@ -49,4 +47,4 @@ class TodoOrder extends React.Component {
   }
 }
 
-export default TodoOrder;
+export default inject('albumStore')(observer(AlbumOrder));
