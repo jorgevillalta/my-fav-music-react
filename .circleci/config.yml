@@ -22,11 +22,3 @@ jobs:
       - run: # run tests
           name: Run Test and Coverage
           command: npm test -- --coverage
-          environment:
-            JUNIT_REPORT_PATH: ./junit/
-            JUNIT_REPORT_NAME: test-results.xml
-          when: always
-      - store_test_results:
-           path: ~/repo/junit
-      - store_artifacts:
-           path: ~/repo/junit
