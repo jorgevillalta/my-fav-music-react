@@ -3,6 +3,10 @@
   "version": "0.9.0",
   "description": "",
   "keywords": [],
+  "jest": {
+    "collectCoverage": true,
+    "collectCoverageFrom": ["src/**/*.{js,jsx}", "!**/node_modules/**"]
+  },
   "dependencies": {
     "@material-ui/core": "3.7.1",
     "@material-ui/icons": "3.0.1",
