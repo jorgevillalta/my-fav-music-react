@@ -1,3 +1,6 @@
+defaults:
+  working_directory: ~/repo
+
 version: 2
 jobs:
   build:
@@ -6,13 +9,15 @@ jobs:
     steps:
       - checkout
       - restore_cache: # special step to restore the dependency cache
-          key: dependency-cache-{{ checksum "package.json" }}
+         key: 
+          - dependency-cache-{{ checksum "package-lock.json" }}
+          - dependency-cache-
       - run:
-          name: Setup Dependencies
-          command: npm install      
+           name: Setup Dependencies
+           command: npm install      
       - save_cache: # special step to save the dependency cache
-          key: dependency-cache-{{ checksum "package.json" }}
-          paths:
+           key: dependency-cache-{{ "package-lock.json" }}
+           paths:
             - ./node_modules
       - run: # run tests
           name: Run Test and Coverage
@@ -22,6 +27,6 @@ jobs:
             JUNIT_REPORT_NAME: test-results.xml
           when: always
       - store_test_results:
-          path: ~/repo/junit
+           path: ~/repo/junit
       - store_artifacts:
-          path: ~/repo/junit
+           path: ~/repo/junit
