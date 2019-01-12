@@ -23,13 +23,10 @@ class AlbumStore {
   }
 
   editAlbum(item) {
-    this.albums.map(album => {
-      if (album.id === item.id) {
-        album = { ...album, ...item };
-      }
-
-      return album;
-    });
+    let foundIndex = this.albums.findIndex(album => album.id == item.id);
+    if (foundIndex > -1) {
+      this.albums[foundIndex] = item;
+    }
   }
 
   deleteAlbum(item) {
@@ -43,7 +40,7 @@ decorate(AlbumStore, {
   sortedAlbums: computed,
   add: action,
   editAlbum: action,
-  deleteAlbum: action
+  deleteAlbum: action,
 });
 
 export default AlbumStore;
