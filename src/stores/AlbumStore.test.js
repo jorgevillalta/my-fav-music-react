@@ -54,11 +54,11 @@ describe('Album Store', () => {
 
     albumStore.add(album);
 
-    expect(albumStore.sortedAlbums).toHaveLength(1);
-    expect(albumStore.sortedAlbums).toContain(album);
+    expect(albumStore.albums).toHaveLength(1);
+    expect(albumStore.albums).toContain(album);
   });
 
-  test('Edit from store', () => {
+  test('Edit existing from store', () => {
     const albumStore = new AlbumStore();
     const album = new AlbumModel('artist', 'album');
 
@@ -68,7 +68,21 @@ describe('Album Store', () => {
     album.name = 'band 1';
     albumStore.editAlbum(album);
 
-    expect(albumStore.sortedAlbums).toContain(album);
+    expect(albumStore.albums).toContainEqual(album);
+  });
+  
+  test('Edit none existing from store', () => {
+    const albumStore = new AlbumStore();
+    const album = new AlbumModel('artist', 'album');
+
+    albumStore.add(album);
+
+    album.id = 2;
+    album.artist = 'artist 1';
+    album.name = 'band 1';
+    albumStore.editAlbum(album);
+
+    expect(albumStore.albums).not.toContainEqual(album);
   });
 
   test('Delete from store', () => {
