@@ -64,11 +64,10 @@ describe('Album Store', () => {
 
     albumStore.add(album);
 
-    album.artist = 'artist 1';
-    album.name = 'band 1';
-    albumStore.editAlbum(album);
+    let albumEdit = { ...album, artist: 'artist 1', name: 'band 1' };
+    albumStore.editAlbum(albumEdit);
 
-    expect(albumStore.albums).toContainEqual(album);
+    expect(albumStore.albums).toContainEqual(albumEdit);
   });
   
   test('Edit none existing from store', () => {
@@ -77,12 +76,10 @@ describe('Album Store', () => {
 
     albumStore.add(album);
 
-    album.id = 2;
-    album.artist = 'artist 1';
-    album.name = 'band 1';
-    albumStore.editAlbum(album);
+    let albumEdit = { ...album, id: 2 };
+    albumStore.editAlbum(albumEdit);
 
-    expect(albumStore.albums).not.toContainEqual(album);
+    expect(albumStore.albums).not.toContainEqual(albumEdit);
   });
 
   test('Delete from store', () => {
