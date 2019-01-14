@@ -1,4 +1,4 @@
-import { decorate, observable, computed, action } from 'mobx';
+import { action, computed, decorate, observable } from 'mobx';
 
 import AlbumOrderModel from '../models/AlbumOrderModel';
 
@@ -23,14 +23,14 @@ class AlbumStore {
   }
 
   editAlbum(item) {
-    let foundIndex = this.albums.findIndex(album => album.id == item.id);
+    let foundIndex = this.albums.findIndex((album) => album.id === item.id);
     if (foundIndex > -1) {
       this.albums[foundIndex] = item;
     }
   }
 
   deleteAlbum(item) {
-    this.albums = this.albums.filter(album => album.id === item.id);
+    this.albums = this.albums.filter((album) => album.id === item.id);
   }
 }
 
@@ -40,7 +40,7 @@ decorate(AlbumStore, {
   sortedAlbums: computed,
   add: action,
   editAlbum: action,
-  deleteAlbum: action,
+  deleteAlbum: action
 });
 
 export default AlbumStore;

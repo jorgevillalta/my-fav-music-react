@@ -1,10 +1,10 @@
-import * as React from 'react';
-import { observer, inject } from 'mobx-react';
-import { TextField, Fab } from '@material-ui/core';
+import { Fab, TextField } from '@material-ui/core';
 import AddIcon from '@material-ui/icons/Add';
+import { inject, observer } from 'mobx-react';
+import * as React from 'react';
 
-import AlbumModel from '../models/AlbumModel';
 import AlbumForm from '../blocks/AlbumForm';
+import AlbumModel from '../models/AlbumModel';
 
 class AlbumCreator extends React.Component {
   constructor(props) {
@@ -16,11 +16,11 @@ class AlbumCreator extends React.Component {
     };
   }
 
-  handleInputChange = e => {
+  handleInputChange = (e) => {
     this.setState({ [e.target.name]: e.target.value });
   };
 
-  handleFormSubmit = e => {
+  handleFormSubmit = (e) => {
     e.preventDefault();
     this.props.albumStore.add(
       new AlbumModel(this.state.artist, this.state.name)

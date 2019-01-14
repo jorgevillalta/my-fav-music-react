@@ -1,8 +1,8 @@
-import * as React from 'react';
-import styled from 'styled-components';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
+import * as React from 'react';
+import styled from 'styled-components';
 
 const AlbumBar = styled(({ name, ...props }) => (
   <AppBar position="fixed" color="primary" {...props}>
@@ -16,6 +16,6 @@ const AlbumBar = styled(({ name, ...props }) => (
   && {
     flex-grow: 1;
   }
-}`;
+`;
 
 export default AlbumBar;
