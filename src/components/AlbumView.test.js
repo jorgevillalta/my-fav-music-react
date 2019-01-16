@@ -1,11 +1,10 @@
-import * as React from 'react';
-import Enzyme, { shallow, mount } from 'enzyme';
-import toJson from 'enzyme-to-json';
+import Enzyme, { shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
+import * as React from 'react';
 
-import AlbumView from './AlbumView';
 import AlbumCard from '../blocks/AlbumCard';
 import AlbumModel from '../models/AlbumModel';
+import AlbumView from './AlbumView';
 
 Enzyme.configure({ adapter: new Adapter() });
 
@@ -24,10 +23,4 @@ describe('Album Component', () => {
     wrapper = shallow(<AlbumView album={albumOne} />);
     expect(wrapper.find(AlbumCard).exists()).toBeTruthy();
   });
-
-  // Not work over codesanbox.io
-  /*test('Match snapshot', () => {
-    wrapper = mount(<AlbumView album={albumOne} />);
-    expect(toJson(wrapper)).toMatchSnapshot();
-  });*/
 });

@@ -22,7 +22,6 @@ describe('Album Store', () => {
     const albumA = new AlbumModel('aaaa', 'zzzz');
     const albumB = new AlbumModel('zzzz', 'aaaa');
 
-    const disordered = [albumB, albumA];
     const ordered = [albumA, albumB];
 
     const albumStore = new AlbumStore();
@@ -37,7 +36,6 @@ describe('Album Store', () => {
     const albumA = new AlbumModel('aaaa', 'aaaa', new Date(2018, 1, 1));
     const albumB = new AlbumModel('zzzz', 'zzzz', new Date(2000, 1, 1));
 
-    const disordered = [albumA, albumB];
     const ordered = [albumB, albumA];
 
     const albumStore = new AlbumStore();
@@ -69,7 +67,7 @@ describe('Album Store', () => {
 
     expect(albumStore.albums).toContainEqual(albumEdit);
   });
-  
+
   test('Edit none existing from store', () => {
     const albumStore = new AlbumStore();
     const album = new AlbumModel('artist', 'album');
