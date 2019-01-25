@@ -8,7 +8,7 @@ import AlbumView from '../AlbumView';
 
 Enzyme.configure({ adapter: new Adapter() });
 
-describe('Album Component', () => {
+describe('AlbumView Component', () => {
   let wrapper;
 
   const albumEmpty = new AlbumModel('', '', '');
