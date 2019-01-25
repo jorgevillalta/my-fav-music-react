@@ -11,6 +11,7 @@ Enzyme.configure({ adapter: new Adapter() });
 
 describe('AlbumForm Block', () => {
   let wrapper;
+  const props = { name: 'input', size: 'small' };
 
   test('Renders ok', () => {
     wrapper = shallow(<AlbumForm />);
@@ -20,5 +21,25 @@ describe('AlbumForm Block', () => {
   test('Match snapshot', () => {
     wrapper = mount(<AlbumForm />);
     expect(toJson(wrapper)).toMatchSnapshot();
+  });
+
+  test('TextInput render props', () => {
+    wrapper = mount(<AlbumForm.TextInput {...props} />);
+    expect(wrapper.prop('name')).toEqual(props.name);
+  });
+
+  test('ArtistInput render props', () => {
+    wrapper = mount(<AlbumForm.ArtistInput {...props} />);
+    expect(wrapper.prop('name')).toEqual(props.name);
+  });
+
+  test('AlbumInput render props', () => {
+    wrapper = mount(<AlbumForm.AlbumInput {...props} />);
+    expect(wrapper.prop('name')).toEqual(props.name);
+  });
+
+  test('AddButton render props', () => {
+    wrapper = mount(<AlbumForm.AddButton {...props} />);
+    expect(wrapper.prop('size')).toEqual(props.size);
   });
 });

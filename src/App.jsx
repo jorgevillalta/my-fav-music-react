@@ -1,14 +1,13 @@
-import * as React from "react";
-import { Provider as StoreProvider } from "mobx-react";
-import styled from "styled-components";
-import { createGlobalStyle, ThemeProvider } from "styled-components";
-import { createMuiTheme } from "@material-ui/core/styles";
+import { createMuiTheme } from '@material-ui/core/styles';
+import { Provider as StoreProvider } from 'mobx-react';
+import * as React from 'react';
+import styled, { createGlobalStyle, ThemeProvider } from 'styled-components';
 
-import AlbumStore from "./stores/AlbumStore";
-import AlbumBar from "./blocks/AlbumBar";
-import AlbumCreator from "./containers/AlbumCreator";
-import AlbumOrder from "./containers/AlbumOrder";
-import AlbumGroup from "./containers/AlbumGroup";
+import AlbumBar from './blocks/AlbumBar';
+import AlbumCreator from './containers/AlbumCreator';
+import AlbumGroup from './containers/AlbumGroup';
+import AlbumOrder from './containers/AlbumOrder';
+import AlbumStore from './stores/AlbumStore';
 
 // https://material-ui.com/customization/themes
 // https://www.styled-components.com/docs/advanced#theming
@@ -33,7 +32,7 @@ const GlobalStyle = createGlobalStyle`
 
 const StyledContentDiv = styled.div`
   && {
-    margin-top: 64px; // Bar height
+    margin-top: 64px; /* Bar height */
   }
 `;
 

@@ -456,6 +456,7 @@ exports[`AlbumCard Block Match snapshot 1`] = `
               "
   && {
     width: 151px;
+    height: 151px;
   }
 ",
             ],

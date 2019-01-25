@@ -1,6 +1,6 @@
-import * as React from 'react';
-import { observer, inject } from 'mobx-react';
 import { FormControl, InputLabel, MenuItem, Select } from '@material-ui/core';
+import { inject, observer } from 'mobx-react';
+import * as React from 'react';
 import styled from 'styled-components';
 
 import AlbumOrderModel from '../models/AlbumOrderModel';
@@ -19,9 +19,14 @@ const StyledDiv = styled.div`
 `;
 
 class AlbumOrder extends React.Component {
-  handleSelect = e => {
+  constructor(props) {
+    super(props);
+    this.handleSelect = this.handleSelect.bind(this);
+  }
+
+  handleSelect(e) {
     this.props.albumStore.sortOrder = e.target.value;
-  };
+  }
 
   render() {
     const { sortOrder } = this.props.albumStore;

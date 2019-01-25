@@ -3,15 +3,18 @@ import AlbumOrderModel from '../../models/AlbumOrderModel';
 import AlbumStore from '../AlbumStore';
 
 describe('Album Store', () => {
+  let albumStore;
+
   test('Create store', () => {
-    const albumStore = new AlbumStore();
+    albumStore = new AlbumStore();
 
     expect(albumStore.albums).toHaveLength(0);
   });
 
   test('Get from store', () => {
     const album = new AlbumModel('artistA', 'albumA');
-    const albumStore = new AlbumStore();
+
+    albumStore = new AlbumStore();
     albumStore.add(album);
 
     const albumCopy = { ...album };
@@ -24,7 +27,7 @@ describe('Album Store', () => {
 
     const ordered = [albumA, albumB];
 
-    const albumStore = new AlbumStore();
+    albumStore = new AlbumStore();
     albumStore.add(albumA);
     albumStore.add(albumB);
     albumStore.sortOrder = AlbumOrderModel.byArtist;
@@ -38,7 +41,7 @@ describe('Album Store', () => {
 
     const ordered = [albumB, albumA];
 
-    const albumStore = new AlbumStore();
+    albumStore = new AlbumStore();
     albumStore.add(albumA);
     albumStore.add(albumB);
     albumStore.sortOrder = AlbumOrderModel.byDate;
@@ -47,7 +50,7 @@ describe('Album Store', () => {
   });
 
   test('Insert into store', () => {
-    const albumStore = new AlbumStore();
+    albumStore = new AlbumStore();
     const album = new AlbumModel('artist', 'album');
 
     albumStore.add(album);
@@ -57,7 +60,7 @@ describe('Album Store', () => {
   });
 
   test('Edit existing from store', () => {
-    const albumStore = new AlbumStore();
+    albumStore = new AlbumStore();
     const album = new AlbumModel('artist', 'album');
 
     albumStore.add(album);
@@ -69,7 +72,7 @@ describe('Album Store', () => {
   });
 
   test('Edit none existing from store', () => {
-    const albumStore = new AlbumStore();
+    albumStore = new AlbumStore();
     const album = new AlbumModel('artist', 'album');
 
     albumStore.add(album);
@@ -81,7 +84,7 @@ describe('Album Store', () => {
   });
 
   test('Delete from store', () => {
-    const albumStore = new AlbumStore();
+    albumStore = new AlbumStore();
     const album = new AlbumModel('artist', 'album');
 
     albumStore.deleteAlbum(album);
