@@ -32,11 +32,6 @@ class AlbumStore {
   deleteAlbum(item) {
     this.albums = this.albums.filter((album) => album.id === item.id);
   }
-
-  static nextId = 1;
-  static generateId() {
-    return this.nextId++;
-  }
 }
 
 decorate(AlbumStore, {
