@@ -3,10 +3,11 @@ import styled from 'styled-components';
 
 import SelectInput from './SelectInput';
 
-const OrderInput = styled(({ ...props }) => (
+const OrderInput = styled(({ value, ...props }) => (
   <SelectInput
     label={'Order 🔝'}
     htmlFor={'order'}
+    value={value || ''}
     inputProps={{
       name: 'order',
       id: 'select-order'

@@ -6,7 +6,7 @@ import AlbumOrderSelect from '../components/AlbumOrderSelect';
 class AlbumOrder extends React.Component {
   constructor(props) {
     super(props);
-    this.handleSelect = this.handleChangeOrder.bind(this);
+    this.handleChangeOrder = this.handleChangeOrder.bind(this);
   }
 
   handleChangeOrder(order) {

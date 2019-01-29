@@ -36,10 +36,6 @@ const StyledContentDiv = styled.div`
   }
 `;
 
-/*const albumStore = new AlbumStore();
-albumStore.add(new AlbumModel('Radiohead', 'Ok Computer'));
-albumStore.add(new AlbumModel('Muse', 'Absolution'));
-albumStore.add(new AlbumModel('Pink Floyd', 'The dark side of the Moon'));*/
 const stores = { albumStore: new AlbumStore() };
 
 class App extends React.Component {
