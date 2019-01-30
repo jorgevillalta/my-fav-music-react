@@ -1,48 +1,26 @@
+import { inject, observer } from 'mobx-react';
 import * as React from 'react';
-import { observer, inject } from 'mobx-react';
-import { FormControl, InputLabel, MenuItem, Select } from '@material-ui/core';
-import styled from 'styled-components';
 
-import AlbumOrderModel from '../models/AlbumOrderModel';
-
-const StyledDiv = styled.div`
-  && {
-    display: flex;
-    align-content: stretch;
-    align-items: center;
-
-    /* childs margin */
-    & > * {
-      margin: 12px;
-    }
-  }
-`;
+import AlbumOrderSelect from '../components/AlbumOrderSelect';
 
 class AlbumOrder extends React.Component {
-  handleSelect = e => {
-    this.props.albumStore.sortOrder = e.target.value;
-  };
+  constructor(props) {
+    super(props);
+    this.handleChangeOrder = this.handleChangeOrder.bind(this);
+  }
+
+  handleChangeOrder(order) {
+    this.props.albumStore.sortOrder = order;
+  }
 
   render() {
     const { sortOrder } = this.props.albumStore;
 
     return (
-      <StyledDiv>
-        <FormControl>
-          <InputLabel htmlFor="order">Order</InputLabel>
-          <Select
-            value={sortOrder}
-            onChange={this.handleSelect}
-            inputProps={{
-              name: 'order',
-              id: 'select-order'
-            }}>
-            <MenuItem value={AlbumOrderModel.byDate}>By Date</MenuItem>
-            <MenuItem value={AlbumOrderModel.byName}>By Album</MenuItem>
-            <MenuItem value={AlbumOrderModel.byArtist}>By Artist</MenuItem>
-          </Select>
-        </FormControl>
-      </StyledDiv>
+      <AlbumOrderSelect
+        order={sortOrder}
+        onChangeOrder={this.handleChangeOrder}
+      />
     );
   }
 }
