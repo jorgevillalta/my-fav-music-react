@@ -3,6 +3,21 @@
   "version": "0.9.0",
   "description": "",
   "keywords": [],
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "lint": "eslint src/**/*.js cypress/**/*.js",
+    "test": "react-scripts test --env=jsdom",
+    "test:coverage": "react-scripts test --env=jsdom --coverage",
+    "test:e2e:open": "cypress open",
+    "test:e2e:run": "cypress run"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{js,jsx}",
@@ -12,13 +27,8 @@
     ]
   },
   "dependencies": {
-    "@material-ui/core": "3.9.1",
+    "@material-ui/core": "^3.9.2",
     "@material-ui/icons": "3.0.2",
-    "enzyme": "3.8.0",
-    "enzyme-adapter-react-16": "1.8.0",
-    "enzyme-to-json": "3.3.5",
-    "jest-enzyme": "7.0.1",
-    "jest-styled-components": "6.3.1",
     "mobx": "5.9.0",
     "mobx-react": "5.4.3",
     "mobx-react-devtools": "6.0.3",
@@ -27,21 +37,15 @@
     "styled-components": "4.1.3"
   },
   "devDependencies": {
+    "cypress": "^3.1.5",
+    "enzyme": "3.8.0",
+    "enzyme-adapter-react-16": "1.9.0",
+    "enzyme-to-json": "3.3.5",
     "eslint": "5.6.0",
+    "eslint-plugin-cypress": "^2.2.0",
     "eslint-plugin-react": "^7.12.4",
+    "jest-enzyme": "7.0.1",
+    "jest-styled-components": "6.3.1",
     "react-scripts": "2.1.3"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "test:coverage": "react-scripts test --env=jsdom --coverage",
-    "lint": "eslint src/**/*.js"
-  },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+  }
 }
