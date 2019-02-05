@@ -13,9 +13,13 @@ class AlbumView extends React.Component {
       <AlbumCard>
         <AlbumCard.Details>
           <AlbumCard.Content>
-            <AlbumCard.Title>{this.props.album.name}</AlbumCard.Title>
-            <AlbumCard.Subtitle>{this.props.album.artist}</AlbumCard.Subtitle>
-            <small>{localeDate}</small>
+            <AlbumCard.Title data-test="album-view-name">
+              {this.props.album.name}
+            </AlbumCard.Title>
+            <AlbumCard.Subtitle data-test="album-view-artist">
+              {this.props.album.artist}
+            </AlbumCard.Subtitle>
+            <small data-test="album-view-date">{localeDate}</small>
           </AlbumCard.Content>
           <AlbumCard.Actions>
             {/*<IconButton color="default">

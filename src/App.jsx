@@ -44,11 +44,11 @@ class App extends React.Component {
       <ThemeProvider theme={theme}>
         <StoreProvider {...stores}>
           <div>
-            <AlbumBar name="My Fav Albums" />
+            <AlbumBar name="My Fav Albums" data-test="album-bar" />
             <StyledContentDiv>
               <AlbumCreator />
               <AlbumOrder />
-              <AlbumGroup />
+              <AlbumGroup data-test="album-group" />
             </StyledContentDiv>
             <GlobalStyle />
           </div>

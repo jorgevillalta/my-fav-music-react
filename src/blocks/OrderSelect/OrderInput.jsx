@@ -9,8 +9,7 @@ const OrderInput = styled(({ value, ...props }) => (
     htmlFor={'order'}
     value={value || ''}
     inputProps={{
-      name: 'order',
-      id: 'select-order'
+      name: 'order'
     }}
     {...props}
   />
