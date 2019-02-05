@@ -10,7 +10,7 @@ class AlbumView extends React.Component {
       ? this.props.album.dateAdded.toLocaleString()
       : '';
     return (
-      <AlbumCard>
+      <AlbumCard data-test="album-view">
         <AlbumCard.Details>
           <AlbumCard.Content>
             <AlbumCard.Title data-test="album-view-name">
