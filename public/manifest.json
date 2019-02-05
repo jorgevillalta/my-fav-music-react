@@ -1,15 +1,18 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "name": "My Fav Music",
+  "version": "1.0.0",
+  "author": "Jorge Villalta",
+  "default_locale": "en",
   "icons": [
     {
-      "src": "favicon.ico",
-      "sizes": "192x192",
-      "type": "image/png"
+      "16": "favicon16.png",
+      "32": "favicon32.png",
+      "64": "favicon64.png",
+      "196": "favicon196.png"
     }
   ],
   "start_url": "./index.html",
   "display": "standalone",
-  "theme_color": "#000000",
+  "theme_color": "#3f51b5",
   "background_color": "#ffffff"
 }
