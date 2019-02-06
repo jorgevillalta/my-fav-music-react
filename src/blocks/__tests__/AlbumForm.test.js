@@ -40,6 +40,6 @@ describe('AlbumForm Block', () => {
 
   test('AddButton render props', () => {
     wrapper = mount(<AlbumForm.AddButton {...props} />);
-    expect(wrapper.prop('size')).toEqual(props.size);
+    expect(wrapper.prop('name')).toEqual(props.name);
   });
 });

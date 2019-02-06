@@ -15,7 +15,7 @@ class AlbumOrderSelect extends React.Component {
 
   render() {
     return (
-      <OrderSelect>
+      <OrderSelect data-test="album-order-select">
         <OrderSelect.OrderInput
           value={this.props.order}
           onChange={this.handleOrderSelect}>

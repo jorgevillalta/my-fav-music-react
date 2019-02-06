@@ -12,7 +12,14 @@ exports[`AlbumForm Block Match snapshot 1`] = `
           "componentStyle": ComponentStyle {
             "componentId": "sc-bdVaJa",
             "isStatic": true,
-            "rules": Array [],
+            "rules": Array [
+              "
+  && {
+    max-width: 40px;
+    max-height: 40px;
+  }
+",
+            ],
           },
           "displayName": "Styled(Component)",
           "foldedComponentIds": Array [],
