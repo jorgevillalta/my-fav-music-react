@@ -10,13 +10,13 @@ jobs:
       - checkout
       - restore_cache: # special step to restore the dependency cache
           keys:
-            - dependency-cache-{{ checksum "package-lock.json" }}
-            - dependency-cache-
+            - dependency-cache-{{ .Branch }}-{{ checksum "package-lock.json" }}
+            - dependency-cache-{{ .Branch }}
       - run:
           name: Setup Dependencies
           command: npm install
       - save_cache: # special step to save the dependency cache
-          key: dependency-cache-{{ checksum "package-lock.json" }}
+          key: dependency-cache-{{ .Branch }}-{{ checksum "package-lock.json" }}
           paths:
             - ./node_modules
             - ~/.cache
@@ -29,5 +29,11 @@ jobs:
           background: true
       - run:
           name: Run e2e test with Cypress
-          command: npm run test:e2e:run
+          command: npm run test:e2e:run -- --reporter junit --reporter-options "mochaFile=results/my-test-output.xml"
           when: on_success
+      - store_artifacts:
+          path: cypress/videos
+      - store_artifacts:
+          path: cypress/screenshots
+      - store_test_results:
+          path: results
