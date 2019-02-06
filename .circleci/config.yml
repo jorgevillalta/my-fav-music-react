@@ -5,7 +5,7 @@ version: 2.0
 jobs:
   build:
     docker:
-      - image: cypress/base:8
+      - image: cypress/base:10
     steps:
       - checkout
       - restore_cache: # special step to restore the dependency cache
