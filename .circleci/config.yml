@@ -1,9 +1,7 @@
 defaults:
   working_directory: ~/repo
 
-version: 2.1
-orbs:
-  cypress: cypress-io/cypress@1
+version: 2.0
 jobs:
   build:
     docker:
@@ -24,5 +22,6 @@ jobs:
       - run: # run tests
           name: Run Test and Coverage
           command: npm test -- --coverage
-      - cypress/run # "run" job comes from "cypress" orb
-      
+      - run: # e2e 
+          name: Run e2e test with Cypress
+          command: npm run test:e2e:run
