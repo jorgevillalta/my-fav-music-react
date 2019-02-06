@@ -20,9 +20,13 @@ jobs:
           paths:
             - ./node_modules
             - ~/.cache
-      - run: # run tests
+      - run:
           name: Run Test and Coverage
           command: npm test -- --coverage
-      - run: # e2e 
+      - run:
+          name: Background the app
+          command: npm start
+      - run:
           name: Run e2e test with Cypress
           command: npm run test:e2e:run
+          background: true
