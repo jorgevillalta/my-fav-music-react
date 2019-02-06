@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "https://jorgevillalta.github.io/my-fav-music-react/precache-manifest.a69d5c62fddfbd21f027ebb61f3a48a9.js"
+  "https://jorgevillalta.github.io/my-fav-music-react/precache-manifest.847ece72a03e2b1cf6f17406db98170b.js"
 );
 
 workbox.clientsClaim();
