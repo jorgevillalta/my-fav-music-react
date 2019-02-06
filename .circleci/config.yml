@@ -26,7 +26,8 @@ jobs:
       - run:
           name: Background the app
           command: npm start
+          background: true
       - run:
           name: Run e2e test with Cypress
           command: npm run test:e2e:run
-          background: true
+          when: on_success
