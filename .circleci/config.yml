@@ -5,7 +5,7 @@ version: 2.0
 jobs:
   build:
     docker:
-      - image: circleci/node:8
+      - image: cypress/base:8
     steps:
       - checkout
       - restore_cache: # special step to restore the dependency cache
@@ -19,6 +19,7 @@ jobs:
           key: dependency-cache-{{ checksum "package-lock.json" }}
           paths:
             - ./node_modules
+            - ~/.cache
       - run: # run tests
           name: Run Test and Coverage
           command: npm test -- --coverage
