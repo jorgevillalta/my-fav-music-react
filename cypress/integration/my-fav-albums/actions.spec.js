@@ -72,7 +72,7 @@ context('Actions', () => {
       });
   });
 
-  it.only('Albums list in name order', function() {
+  it('Albums list in name order', function() {
     const [albumA, albumB, albumC] = this.albums;
 
     createAlbum(albumA);
