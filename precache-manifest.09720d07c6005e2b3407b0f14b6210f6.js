@@ -12,11 +12,11 @@ self.__precacheManifest = [
     "url": "https://jorgevillalta.github.io/my-fav-music-react/static/js/main.3cc90213.chunk.js"
   },
   {
-    "revision": "fd5b7fdd1f03277e7617",
-    "url": "https://jorgevillalta.github.io/my-fav-music-react/static/js/1.fd5b7fdd.chunk.js"
+    "revision": "ab7811e7776c2d3fd780",
+    "url": "https://jorgevillalta.github.io/my-fav-music-react/static/js/1.ab7811e7.chunk.js"
   },
   {
-    "revision": "805e0e2724c8c85f2780cd746469ecb4",
+    "revision": "e825175d810fc8e1a33388b5fb3b7939",
     "url": "https://jorgevillalta.github.io/my-fav-music-react/index.html"
   }
 ];
