@@ -8,15 +8,15 @@ self.__precacheManifest = [
     "url": "https://jorgevillalta.github.io/my-fav-music-react/static/js/runtime~main.4e285105.js"
   },
   {
-    "revision": "a361e84d1351e5e5d805",
-    "url": "https://jorgevillalta.github.io/my-fav-music-react/static/js/main.a361e84d.chunk.js"
+    "revision": "3cc902134c0761792bf2",
+    "url": "https://jorgevillalta.github.io/my-fav-music-react/static/js/main.3cc90213.chunk.js"
   },
   {
     "revision": "fd5b7fdd1f03277e7617",
     "url": "https://jorgevillalta.github.io/my-fav-music-react/static/js/1.fd5b7fdd.chunk.js"
   },
   {
-    "revision": "ae913c096ed19097a8ec5d49355e7809",
+    "revision": "805e0e2724c8c85f2780cd746469ecb4",
     "url": "https://jorgevillalta.github.io/my-fav-music-react/index.html"
   }
 ];
