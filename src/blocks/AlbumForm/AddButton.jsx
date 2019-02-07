@@ -9,6 +9,7 @@ const AddButton = styled(({ ...props }) => (
   </Fab>
 ))`
   && {
+    flex: 0 0 auto;
     max-width: 40px;
     max-height: 40px;
   }

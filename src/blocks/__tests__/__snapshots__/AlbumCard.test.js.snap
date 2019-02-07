@@ -455,6 +455,8 @@ exports[`AlbumCard Block Match snapshot 1`] = `
             "rules": Array [
               "
   && {
+    flex: 0 0 auto;
+    align-self: center;
     width: 151px;
     height: 151px;
   }
