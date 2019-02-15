@@ -30,7 +30,7 @@ class AlbumStore {
   }
 
   deleteAlbum(item) {
-    this.albums = this.albums.filter((album) => album.id === item.id);
+    this.albums = this.albums.filter((album) => album.id !== item.id);
   }
 }
 
