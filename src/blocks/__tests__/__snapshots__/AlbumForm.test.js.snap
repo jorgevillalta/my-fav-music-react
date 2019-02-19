@@ -38,13 +38,7 @@ exports[`AlbumForm Block Match snapshot 1`] = `
           "componentStyle": ComponentStyle {
             "componentId": "sc-htpNat",
             "isStatic": true,
-            "rules": Array [
-              "
-  && {
-    flex: 1 1 auto;
-  }
-",
-            ],
+            "rules": Array [],
           },
           "displayName": "Styled(Component)",
           "foldedComponentIds": Array [],
@@ -62,13 +56,7 @@ exports[`AlbumForm Block Match snapshot 1`] = `
           "componentStyle": ComponentStyle {
             "componentId": "sc-bxivhb",
             "isStatic": true,
-            "rules": Array [
-              "
-  && {
-    flex: 1 1 auto;
-  }
-",
-            ],
+            "rules": Array [],
           },
           "displayName": "Styled(Component)",
           "foldedComponentIds": Array [],
@@ -117,7 +105,13 @@ exports[`AlbumForm Block Match snapshot 1`] = `
           "componentStyle": ComponentStyle {
             "componentId": "sc-bwzfXH",
             "isStatic": true,
-            "rules": Array [],
+            "rules": Array [
+              "
+  && {
+    flex: 1 1 auto;
+  }
+",
+            ],
           },
           "displayName": "Styled(Component)",
           "foldedComponentIds": Array [],
