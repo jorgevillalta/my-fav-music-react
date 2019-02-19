@@ -87,6 +87,9 @@ describe('Album Store', () => {
     albumStore = new AlbumStore();
     const album = new AlbumModel('artist', 'album');
 
+    albumStore.add(album);
+    expect(albumStore.sortedAlbums).toHaveLength(1);
+    
     albumStore.deleteAlbum(album);
     expect(albumStore.sortedAlbums).toHaveLength(0);
   });
