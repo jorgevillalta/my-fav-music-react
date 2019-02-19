@@ -1,14 +1,10 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-import AlbumForm from '.';
+import TextInput from './TextInput';
 
 const ArtistInput = styled(({ ...props }) => (
-  <AlbumForm.TextInput label={'Artist 🎸'} name={'artist'} {...props} />
-))`
-  && {
-    flex: 1 1 auto;
-  }
-`;
+  <TextInput label={'Artist 🎸'} name={'artist'} {...props} />
+))``;
 
 export default ArtistInput;
