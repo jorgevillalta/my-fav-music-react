@@ -44,7 +44,7 @@ describe('AlbumOrderSelect Component', () => {
   });
 
   test('Change order calls handle-function & affect state lift up', () => {
-    wrapper = mount(<AlbumOrderSelect onOrderChange={mockFn} />);
+    wrapper = mount(<AlbumOrderSelect onChangeOrder={mockFn} />);
 
     const orderInput = wrapper.find(OrderSelect.OrderInput);
 
