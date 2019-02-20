@@ -43,7 +43,7 @@ describe('AlbumOrderSelect Component', () => {
     );
   });
 
-  test('Change events calls handle function', () => {
+  test('Change order calls handle-function & affect state lift up', () => {
     wrapper = mount(<AlbumOrderSelect onChangeOrder={mockFn} />);
 
     const orderInput = wrapper.find(OrderSelect.OrderInput);
@@ -53,17 +53,6 @@ describe('AlbumOrderSelect Component', () => {
     });
 
     expect(spyHandleOrderSelect).toBeCalledTimes(1);
-  });
-
-  test('Change events affect state lift up', () => {
-    wrapper = mount(<AlbumOrderSelect onChangeOrder={mockFn} />);
-
-    const orderInput = wrapper.find(OrderSelect.OrderInput);
-
-    orderInput.props().onChange({
-      target: { value: AlbumOrderModel.byName }
-    });
-
     expect(mockFn).toBeCalledWith(AlbumOrderModel.byName);
   });
 });
