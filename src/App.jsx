@@ -43,7 +43,7 @@ class App extends React.Component {
     return (
       <ThemeProvider theme={theme}>
         <StoreProvider {...stores}>
-          <div>
+          <>
             <AlbumBar name="My Fav Albums" data-test="album-bar" />
             <StyledContentDiv>
               <AlbumCreator />
@@ -51,7 +51,7 @@ class App extends React.Component {
               <AlbumGroup data-test="album-group" />
             </StyledContentDiv>
             <GlobalStyle />
-          </div>
+          </>
         </StoreProvider>
       </ThemeProvider>
     );
